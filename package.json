@@ -4,7 +4,7 @@
   "description": "A MySQL Messagequeueing service",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test.js",
     "start": "node index.js"
   },
   "keywords": [
@@ -20,8 +20,11 @@
     "lodash": "^4.0.1",
     "mysql": "^2.10.2"
   },
-  "repository" : {
-		"type": "git",
-		"url": "https://github.com/Mario-F/mysql_mq.git",
-	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mario-F/mysql_mq.git"
+  },
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
 }
