@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+  - "7"
+  - "6"
+  - "5"
+  - "4"
+services:
+  - mysql
+before_install:
+  - mysql -e "create database IF NOT EXISTS mp_test;" -uroot
