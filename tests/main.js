@@ -12,8 +12,8 @@ describe('Complete test mysql-mq', () => {
         queue.init((err) => {
             should.not.exist(err)
             done()
-        }).timeout(15000)
-    })
+        })
+    }).timeout(15000)
     
     it('Put an message to queue', (done) => {
         queue.put(testMessage.message, (err, idMessage) => {
