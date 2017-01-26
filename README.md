@@ -1,5 +1,5 @@
 # MySQL Message Queue
-
+[![Build Status](https://travis-ci.org/Mario-F/mysql_mq.svg?branch=master)](https://travis-ci.org/Mario-F/mysql_mq)
 mysql-mq offers a Message Queueing service like rsmq for example in mysql.
 
 ## Example usage
