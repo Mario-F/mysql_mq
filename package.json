@@ -1,6 +1,6 @@
 {
   "name": "mysql-mq",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A MySQL Messagequeueing service",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "author": "Mario Fritschen",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.0.1",
-    "mysql": "^2.10.2"
+    "lodash": "^4.17.4",
+    "mysql2": "^1.1.2"
   },
   "repository": {
     "type": "git",
