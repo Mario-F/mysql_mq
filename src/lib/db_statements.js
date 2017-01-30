@@ -20,3 +20,6 @@ module.exports.lock_message         =   "UPDATE ?? SET visibility = DATE_ADD(NOW
                                         
 module.exports.delete_message       =   "DELETE FROM ??" +
                                         "WHERE id = ?";
+                                        
+module.exports.get_queue_info       =   `SELECT 
+                                            (SELECT COUNT(1) FROM ??) as messages_count`

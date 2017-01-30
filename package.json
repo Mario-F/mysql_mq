@@ -1,11 +1,10 @@
 {
   "name": "mysql-mq",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A MySQL Messagequeueing service",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests",
-    "start": "node index.js"
+    "test": "mocha tests"
   },
   "keywords": [
     "mysql",
@@ -17,6 +16,8 @@
   "author": "Mario Fritschen",
   "license": "MIT",
   "dependencies": {
+    "debug": "^2.6.0",
+    "es-nodeify": "^1.0.0",
     "lodash": "^4.17.4",
     "mysql2": "^1.1.2"
   },
