@@ -4,7 +4,7 @@ const should    = chai.should()
 
 module.exports = (store) => {
     
-    describe('Test Promise', () => {
+    describe('Promise', () => {
         let testMessage = { message: 'test' }
         
         it('Put an message to queue', (done) => {
@@ -13,9 +13,7 @@ module.exports = (store) => {
                 testMessage.id_message = res
                 done()
             })
-            .catch((err) => {
-                done(err)
-            })
+            .catch(done)
         })
         
         it('Get a message from queue', (done) => {
@@ -25,9 +23,7 @@ module.exports = (store) => {
                 res.message.should.equal(testMessage.message)
                 done()
             })
-            .catch((err) => {
-                done(err)
-            })
+            .catch(done)
         })
         
         it('Delete a message from queue', (done) => {
@@ -36,9 +32,7 @@ module.exports = (store) => {
                 should.not.exist(res)
                 done()
             })
-            .catch((err) => {
-                done(err)
-            })
+            .catch(done)
         })
     })
 }

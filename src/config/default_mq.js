@@ -1,5 +1,5 @@
 /*
-    Metadata
+    mysql-mq Default configuration
 */
 
 module.exports.config_mq = {

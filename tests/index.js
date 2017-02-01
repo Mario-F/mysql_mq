@@ -21,10 +21,11 @@ describe('Complete test mysql-mq', () => {
     describe('Basic usage', () => {
         require('./units/basic_004')(store)
         require('./units/basic_promise')(store)
+        require('./units/queue_operations')(store)
     })
     
     describe('Unprepare', () => {
-        it('Close Queue', (done) => {
+        it('Close Connection', (done) => {
             store.queue.end((err) => {
                 should.not.exist(err)
                 done(err)

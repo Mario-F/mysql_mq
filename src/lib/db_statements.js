@@ -23,3 +23,5 @@ module.exports.delete_message       =   "DELETE FROM ??" +
                                         
 module.exports.get_queue_info       =   `SELECT 
                                             (SELECT COUNT(1) FROM ??) as messages_count`
+                                            
+module.exports.delete_queue         =   `DROP TABLE ??`
