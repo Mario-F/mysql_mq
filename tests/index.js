@@ -33,4 +33,8 @@ describe('Complete test mysql-mq', () => {
         })
     })
     
+    describe('Examples', () => {
+        require('./units/examples')
+    })
+    
 })

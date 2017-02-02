@@ -12,6 +12,5 @@ module.exports.config_mysql = {
     port:               3306,
     user:               'root',
     password:           null,
-    database:           'mysql_mq',
-    persistent:         false
+    database:           'mysql_mq'
 }
