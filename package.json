@@ -1,10 +1,10 @@
 {
   "name": "mysql-mq",
-  "version": "0.2.0",
+  "version": "0.4.1",
   "description": "A MySQL Messagequeueing service",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha test/"
   },
   "keywords": [
     "mysql",
@@ -15,15 +15,15 @@
   ],
   "author": "Mario Fritschen",
   "license": "MIT",
-  "dependencies": {
-    "debug": "^2.6.0",
-    "es-nodeify": "^1.0.0",
-    "lodash": "^4.17.4",
-    "mysql2": "^1.1.2"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Mario-F/mysql_mq.git"
+  },
+  "dependencies": {
+    "debug": "^2.6.4",
+    "es-nodeify": "^1.0.0",
+    "lodash": "^4.17.4",
+    "mysql2": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
