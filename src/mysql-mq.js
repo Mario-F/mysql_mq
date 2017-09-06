@@ -2,6 +2,7 @@
 require('es-nodeify')
 const debug     = require('debug')('mysqlmq:mysqlmq')
 const _         = require('lodash')
+
 const mqDefault = require('./config/default_mq')
 const stmt      = require('./sql/db_statements')
 
@@ -110,11 +111,11 @@ class MySQLMQ
     }
 
     getConfig() {
-        return this._config_mq;
+        return this._config_mq
     }
     setConfig(config) {
-        this._config_mq = _.defaults(config, this._config_mq);
+        this._config_mq = _.defaults(config, this._config_mq)
     }
 }
 
-module.exports = MySQLMQ;
+module.exports = MySQLMQ
