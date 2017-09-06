@@ -4,7 +4,9 @@
   "description": "A MySQL Messagequeueing service",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/"
+    "test": "mocha test/",
+    "dockertest": "docker-compose build && docker-compose run mysql-mq",
+    "dockerend": "docker-compose down"
   },
   "keywords": [
     "mysql",
