@@ -7,6 +7,9 @@ Its not build to down to performance, either its optimized to provide a mysql ba
 $ npm install mysql-mq
 ```
 
+## Usage
+A queue will automatically created when not exists, this create process can be called manually with the "init" method or is executed on first usage of the queue.
+
 ## Example usage
 ```javascript
 var mmq = require("mysql-mq");

@@ -15,18 +15,20 @@ class MySQLMQ
 
         // Set Configurations
         this._queue = queue
+        this._tableData = this._queue + '_data'
+        this._tableMeta = this._queue + '_meta'
         this._config_mysql = _.defaults(config_mysql ? config_mysql : {}, mqDefault.config_mysql)
         this._config_mq = _.defaults(config_mq ? config_mq : {}, mqDefault.config_mq)
 
         // Create Database object
-        this._db = require('./lib/db_operations')(this._config_mysql, this._queue)
+        this._db = require('./lib/db_operations')(this._config_mysql, this._tableData)
     }
 
     // Initialize all necessary connections and executes callback(err)
     // Deprecated, check if queue table
     init(callback) {
         return new Promise((resolv, reject) => {
-            this._db.query(stmt.get_queue_info, [this._queue], (err, res) => {
+            this._db.query(stmt.get_queue_info, [this._tableData], (err, res) => {
                 if(err)
                     return reject(err)
                 resolv(res)
@@ -46,7 +48,7 @@ class MySQLMQ
     // Delete the Queue table
     queueDelete(callback) {
         return new Promise((resolv, reject) => {
-            this._db.query(stmt.delete_queue, [this._queue], (err, res) => {
+            this._db.query(stmt.delete_queue, [this._tableData], (err, res) => {
                 if(err) {
                     return reject(err)
                 }
@@ -58,7 +60,7 @@ class MySQLMQ
     // Push a message to the queue and returns the message_id
     put(message, callback) {
         return new Promise((resolv, reject) => {
-            this._db.query(stmt.insert_message, [this._queue, message], (err, res) => {
+            this._db.query(stmt.insert_message, [this._tableData, message], (err, res) => {
                 if(err) {
                     return reject(err)
                 }
@@ -74,14 +76,14 @@ class MySQLMQ
     get(callback) {
         return new Promise((resolv, reject) => {
             (function getMessage() {
-                this._db.query(stmt.get_next_message, [this._queue], (err, resMes) => {
+                this._db.query(stmt.get_next_message, [this._tableData], (err, resMes) => {
                     if(err) {
                         return reject(err)
                     }
                     if(resMes.length == 0) {
                         return resolv(null)
                     }
-                    this._db.query(stmt.lock_message, [this._queue, this._config_mq.vis_timeout, resMes[0].id], (err, res) => {
+                    this._db.query(stmt.lock_message, [this._tableData, this._config_mq.vis_timeout, resMes[0].id], (err, res) => {
                         if(err) {
                             return reject(err)
                         }
@@ -98,7 +100,7 @@ class MySQLMQ
     // Delete a message from the queue by ID
     delete(id_message, callback) {
         return new Promise((resolv, reject) => {
-            this._db.query(stmt.delete_message, [this._queue, id_message], (err, res) => {
+            this._db.query(stmt.delete_message, [this._tableData, id_message], (err, res) => {
                 if(err) {
                     return reject(err)
                 }

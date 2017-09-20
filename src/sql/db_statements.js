@@ -2,12 +2,20 @@
     Metadata
 */
 
-module.exports.create_table         =   "CREATE TABLE IF NOT EXISTS ?? (" +
+module.exports.create_table_data    =   "CREATE TABLE IF NOT EXISTS ?? (" +
                                         "`id` BIGINT NOT NULL AUTO_INCREMENT, " +
                                         "`message` LONGTEXT NOT NULL, " +
                                         "`visibility` TIMESTAMP NULL, " +
                                         "`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, " +
                                         "PRIMARY KEY (`id`))"
+
+module.exports.create_table_meta    =   `
+                                          CREATE TABLE IF NOT EXISTS ?? (
+                                            \`id_meta\` INT NOT NULL,
+                                            \`value\` TEXT NOT NULL,
+                                            PRIMARY KEY (\`id\`)
+                                          )
+                                        `
 
 module.exports.insert_message       =   "INSERT INTO ?? (message) VALUES (?)"
 

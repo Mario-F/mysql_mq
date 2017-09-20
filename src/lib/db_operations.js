@@ -3,10 +3,10 @@ const debug     = require('debug')('mysqlmq:lib:dboperations')
 const mysql     = require('mysql2')
 
 module.exports = function dbOperations(config, queuename) {
-    let expose = {}
-    let connection = mysql.createConnection(config)
+    const expose = {}
+    const connection = mysql.createConnection(config)
 
-    connection.query(require('../sql/db_statements').create_table, [queuename], (err, result) => {
+    connection.query(require('../sql/db_statements').create_table_data, [queuename], (err, result) => {
         if(err)
             throw err
     })
