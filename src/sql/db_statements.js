@@ -1,6 +1,6 @@
 /*
-    Metadata
-*/
+ *  SQL Statements
+ */
 
 module.exports.create_table_data    =   "CREATE TABLE IF NOT EXISTS ?? (" +
                                         "`id` BIGINT NOT NULL AUTO_INCREMENT, " +
