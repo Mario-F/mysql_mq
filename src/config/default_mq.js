@@ -8,9 +8,9 @@ module.exports.config_mq = {
 }
 
 module.exports.config_mysql = {
-    host:               'localhost',
-    port:               3306,
-    user:               'root',
-    password:           null,
-    database:           'mysql_mq'
+    host:               process.env.MYSQL_HOST      || 'localhost',
+    port:               process.env.MYSQL_PORT      || 3306,
+    user:               process.env.MYSQL_USER      || 'root',
+    password:           process.env.MYSQL_PASS      || null,
+    database:           process.env.MYSQL_DATABASE  || 'mysql_mq',
 }

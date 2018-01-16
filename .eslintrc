@@ -1,0 +1,27 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+},
+  "rules": {
+    "comma-dangle": [2,"always-multiline"],
+    "no-cond-assign": [2,"except-parens"],
+    "no-console": 1,
+    "no-constant-condition": 1,
+    "no-empty": 2,
+    "no-extra-boolean-cast": 2,
+    "no-extra-parens": [1,"all"],
+    "no-func-assign": 1,
+    "no-inner-declarations": [1,"both"],
+    "no-invalid-regexp": 1,
+    "no-irregular-whitespace": 2,
+    "no-negated-in-lhs": 1,
+    "no-regex-spaces": 1,
+    "no-sparse-arrays": 1,
+    "no-unreachable": 1,
+    "use-isnan": 1,
+    "no-unexpected-multiline": 1,
+    "semi": [2,"never"],
+    "prefer-const": 1
+  }
+}
