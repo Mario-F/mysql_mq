@@ -1,3 +1,10 @@
+## [Unreleased]
+### Added
+- TODO
+
+### Changed
+- TODO
+
 ## [0.4.2] - 2018-01-16
 ### Added
 - Query queuing to automatically setup database without waiting for completion
