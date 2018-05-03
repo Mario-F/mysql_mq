@@ -16,7 +16,7 @@ services:
     container_name: mysql-mq.core.local
 
   mysql:
-    image: mysql:latest
+    image: mysql:5
     ports:
       - 3380:3306
     environment:
