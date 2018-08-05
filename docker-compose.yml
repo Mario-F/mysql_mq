@@ -7,19 +7,19 @@ services:
       - 8080:8080
     environment:
       - NODE_ENV=development
-      - MYSQL_HOST=mysql-mq.mysql.local
+      - MYSQL_HOST=mysql.mysql-mq.local
       - MYSQL_USER=root
       - MYSQL_PASS=root
-    command: ["./docker/wait-for-it.sh", "-h", "mysql-mq.mysql.local", "-p", "3306", "--", "npm", "test"]
+    command: ["./docker/wait-for-it.sh", "-h", "mysql.mysql-mq.local", "-p", "3306", "--", "npm", "test"]
     depends_on:
       - mysql
-    container_name: mysql-mq.core.local
+    container_name: core.mysql-mq.local
 
   mysql:
-    image: mysql:5
+    image: mariadb:latest
     ports:
       - 3380:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mp_test
-    container_name: mysql-mq.mysql.local
+    container_name: mysql.mysql-mq.local
