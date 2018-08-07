@@ -3,7 +3,8 @@
 - TODO
 
 ### Changed
-- TODO
+- Docker: Changed database to mariadb:latest for tests
+- Docker: Use node:latest docker image instead of building own mysql-mq image
 
 ## [0.4.2] - 2018-01-16
 ### Added
